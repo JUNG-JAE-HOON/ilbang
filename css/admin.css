@@ -1,0 +1,51 @@
+/*색*/
+/*남색? #4c5366*/
+/*남색? #2a3243*/
+/*회색 #f7f8fd*/
+.color1{background-color: #2a3243}
+.color2{background-color: #4c5366}
+.color3{background-color: #f7f8fd}
+.color4{background-color: #edf1f2}
+.color5{background-color: #b7c2c8}
+.font_grey{color:ddd;}
+.tabContPd{padding:20px 50px;}
+
+
+.lh60{line-height: 60px}
+.p15{padding:15px;}
+.pr20{padding-right: 20px !important;}
+.mr50{margin-right: 50px}
+.cp{cursor: pointer}
+
+.adminCont{width:1090px; margin:0 auto; height: auto !important}
+.contLast{height: 1300px}
+.adminTabWrap{width:420px; margin:0 auto; height: 51px}
+.adminTabWrap span{width:135px; box-sizing: content-box; border:0; cursor:pointer}
+.active_under{border-bottom:3px solid #eb5f43 !important; color:#eb5f43;}
+.board_left ul{width:500px;}
+.board_left ul li{line-height: 30px; font-size: 12px}
+.totalSumArea{position: fixed; bottom:0; background-color: black}
+.totalSumArea{background-color:#525a71; color:white; font-size:18px;}
+.totalSumArea .container{height: 50px; line-height: 50px}
+
+.userList span:nth-child(1){width:8%}
+.userList span:nth-child(2){width:12%}
+.userList span:nth-child(3){width:8%}
+.userList span:nth-child(4){width:18%}
+.userList span:nth-child(5){width:14%}
+.userList span:nth-child(6){width:8%}
+.userList span:nth-child(7){width:15%}
+.userList span:nth-child(8){width:15%}
+.pagination > li > a{height: 35px}
+
+.nav > li > a{width:100px; color:white;}
+.active a{height: 42px; background: white; color:black !important;}
+.hopeIldangBadge {border-radius: 2px; padding:1px 2px; margin-right: 5px; border: 1px solid #5172b8; color:#5172b8;}
+
+/*.sm-btn{background-color: #eb5f43 !important; border: 1px solid #eb5f43; background-color:#eb5f43; color:white !important;}*/
+
+.adminScroll {overflow-y: scroll; height: 550px;}
+.adminModalTop {background-color: #4c5366; padding: 20px 0;}
+.adminModalContent{padding:30px 25px;}
+.info-review-btn {border: 2px solid #5172b8; padding: 7px 25px; color: #5172b8; font-size: 14px; font-weight: 600;}
+.info-guin-btn {border: 2px solid #5172b8; background: #5172b8; padding: 7px 25px; color: #fff; font-size: 14px; font-weight: 600;}

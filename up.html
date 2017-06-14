@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<script src="../mobile/js/jquery-1.12.3.min.js"></script>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>테스트페이지입니다</title>
+	<link rel="stylesheet" href="">
+	<style>
+		button{display:block;width:50%; height: 150px; border:2px solid #ddd; margin:50px auto; font-size: 50px}
+		.tc{text-align: center}
+	</style>
+</head>
+<body>
+
+
+<form id="artistForm" method="post" enctype="multipart/form-data" class="oh pr">
+	<button>파일선택<input class="artist-photo pa" type="file" id="FILE_TAG" name="FILE_TAG"  onchange="uploadArtistImage()"  accept="image/*"/></button>
+	</form>
+	<button>파일등록</button>
+
+	<div class="tc">
+	<h1>이미지영역</h1>
+		<img id = "artistImg" src="images/xx.png" alt="">
+	</div>
+
+</body>
+</html>
+
+<script>
+function uploadArtistImage(){
+	if($('#FILE_TAG').val() == "") {
+            alert("사진을 선택하세요.");
+        } else {
+            var form = $('artistForm')[0];
+            var formData = new FormData(form);
+
+            $scope.image_URL = "http://il-bang.com/pc_renewal/sotongFile/";
+
+            formData.append("file", $("#FILE_TAG")[0].files[0]);
+            formData.append("uid", );
+            formData.append("no", $stateParams.no);
+
+            $.ajax({
+                url: "http://il-bang.com/ilbang_pc/ionic/http/sotong/uploadArtistImage.php",
+                processData: false,
+                contentType: false,
+                data: formData,
+                type: 'POST',
+                dataType: 'JSON',
+                success: function(data) {
+                    $scope.sotongAlert(data.message,0);
+
+                    document.getElementById("artistImg").style.backgroundImage = "url('" + $scope.image_URL + data.fileName + "')";
+
+                    if($stateParams.no == null || $stateParams.no == "") {
+                        document.getElementById("plusImg").style.display = "none";
+                        $scope.image_URL = data.fileName;
+                    }
+                }
+            });
+        }
+}
+</script>

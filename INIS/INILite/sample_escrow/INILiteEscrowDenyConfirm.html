@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>이니시스 자체 에스크로(INIescrow 1.0) 거절확인 데모  </title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Cache-Control" content="no-cache"/> 
+<meta http-equiv="Expires" content="0"/> 
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<link rel="stylesheet" href="css/group.css" type="text/css">
+<style>
+body, tr, td {font-size:10pt; font-family:굴림,verdana; color:#433F37; line-height:19px;}
+table, img {border:none}
+
+/* Padding ******/ 
+.pl_01 {padding:1 10 0 10; line-height:19px;}
+.pl_03 {font-size:20pt; font-family:굴림,verdana; color:#FFFFFF; line-height:29px;}
+
+/* Link ******/ 
+.a:link  {font-size:9pt; color:#333333; text-decoration:none}
+.a:visited { font-size:9pt; color:#333333; text-decoration:none}
+.a:hover  {font-size:9pt; color:#0174CD; text-decoration:underline}
+
+.txt_03a:link  {font-size: 8pt;line-height:18px;color:#333333; text-decoration:none}
+.txt_03a:visited {font-size: 8pt;line-height:18px;color:#333333; text-decoration:none}
+.txt_03a:hover  {font-size: 8pt;line-height:18px;color:#EC5900; text-decoration:underline}
+</style>
+
+<script language="Javascript">
+
+function f_check(){
+	if(document.all.tid.value == ""){
+		alert("거래번호가 빠졌습니다.")
+		return;
+	}
+	else if(document.all.mid.value == ""){
+		alert("상점 아이디가 빠졌습니다.")
+		return;
+	}
+	else if(document.all.dcnf_name.value == ""){
+		alert("거절 확인자 이름을 선택하십시요.")
+		return;
+	}
+	document.ini.submit();
+	
+}
+
+</script>
+
+</head>
+
+<!-----------------------------------------------------------------------------------------------------
+※ 주의 ※
+ 아래의 body TAG의 내용중에 
+ onload="javascript:setDate()" 이 부분은 수정없이 그대로 사용.
+ 아래의 form TAG내용도 수정없이 그대로 사용.
+------------------------------------------------------------------------------------------------------->
+<body bgcolor="#FFFFFF" text="#242424" leftmargin=0 topmargin=15 marginwidth=0 marginheight=0 bottommargin=0 rightmargin=0 onload="javascript:setDate()"><center>
+<!-- 거절확인을 위한 폼 : 이름 변경 불가 -->
+<form name=ini method=post action=INILiteEscrowDenyConfirm.php>
+<table width="632" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="85" background="img/card.gif" style="padding:0 0 0 64">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="3%" valign="top"><img src="img/title_01.gif" width="8" height="27" vspace="5"></td>
+          <td width="97%" height="40" class="pl_03"><font color="#FFFFFF"><b>INIESCROW 거절확인</b></font></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td align="center" bgcolor="6095BC"><table width="620" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#FFFFFF" style="padding:8 0 0 56"> 
+            <br>
+            <table width="510" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="7"><img src="img/life.gif" width="7" height="30"></td>
+                <td background="img/center.gif"><img src="img/icon03.gif" width="12" height="10"> 
+                  <b>정보를 기입하신 후 버튼을 눌러주십시오.</b></td>
+                <td width="8"><img src="img/right.gif" width="8" height="30"></td>
+              </tr>
+            </table>
+            <br>
+            <table width="510" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="510" colspan="2"  style="padding:0 0 0 23"> 
+                  <table width="470" border="0" cellspacing="0" cellpadding="0">
+                   <tr> 
+                      <td width="18" align="center"><img src="img/icon02.gif" width="7" height="7"></td>
+                      <td width="210" height="25">거래번호(TID)</td>
+                      <td width="290"><input type=text name=tid size=45 maxlength=40 value=""></td>
+                    </tr>
+                   <tr> 
+                      <td width="18" align="center"><img src="img/icon02.gif" width="7" height="7"></td>
+                      <td width="210" height="25">구매거절 확인자</td>
+                      <td width="290"><input type=text name=dcnf_name size=17 maxlength=30 value="거절확인해줌"></td>
+                    </tr>
+                    <tr>
+                      <td height="1" colspan="3" align="center"  background="img/line.gif"></td>
+                    </tr>
+                    <tr valign="bottom"> 
+                      <td height="40" colspan="3" align="center">
+                        	<input type="button" value="확 인" onClick=f_check()>
+                      </td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table>
+            <br>
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td><img src="img/bottom01.gif" width="632" height="13"></td>
+  </tr>
+</table>
+</center>
+<!-- 
+상점아이디.
+테스트를 마친 후, 발급받은 아이디로 바꾸어 주십시오.
+-->
+<input type=hidden name=mid value="inilitescr">
+
+
+</form>
+</body>
+</html>
+
+

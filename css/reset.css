@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* 웹폰트 */
+@font-face {
+    font-family:'Nanum';
+    font-weight:400;
+    src: url('font/NanumGothic.eot');
+    src: url('font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothic.woff') format('woff'),
+		 url('font/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family:'NanumBold';
+    font-weight:600;
+    src: url('font/NanumGothicBold.eot');
+    src: url('font/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothicBold.woff') format('woff'),
+		 url('font/NanumGothicBold.ttf') format('truetype');
+}
+@font-face {
+    font-family:'NanumEX';
+    font-weight:900;
+    src: url('font/NanumGothicExtraBold.eot');
+    src: url('font/NanumGothicExtraBold.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothicExtraBold.woff') format('woff'),
+		 url('font/NanumGothicExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Malgun Gothic';
+    font-weight:400;
+    src: url('font/Malgun Gothic.eot');
+    src: url('font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothic.woff') format('woff'),
+		 url('font/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Malgun GothicBold';
+    font-weight:600;
+    src: url('font/Malgun GothicBold.eot');
+    src: url('font/Malgun GothicBold.eot?#iefix') format('embedded-opentype'),
+         url('font/Malgun GothicBold.woff') format('woff'),
+		 url('font/Malgun GothicBold.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Malgun GothicEX';
+    font-weight:900;
+    src: url('font/Malgun GothicEXtraBold.eot');
+    src: url('font/Malgun GothicEXtraBold.eot?#iefix') format('embedded-opentype'),
+         url('font/Malgun GothicEXtraBold.woff') format('woff'),
+		 url('font/Malgun GothicEXtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SeoulNamsan';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/SeoulNamsan.eot);
+  src: url(../font/SeoulNamsan.eot?#iefix) format('embedded-opentype'),
+       url(../font/SeoulNamsan.woff) format('woff'),
+       url(../font/SeoulNamsan.ttf) format('truetype');
+}
+html{overflow-y:scroll;font-size:12px;line-height:1.5;}
+body{margin:0;padding:0;font-size:12px;font-family:'MalgunGothic','맑은고딕','Nanum','나눔고딕','dotum','돋움', sans-serif; font-weight:400; min-width: 1250px;}
+body,div,header,section,nav,article,footer,h1,h2,h3,h4,h5,h6,ul,li,img,span,address,dl,dt,dd,form,fieldset,legend,label,
+input,p,a,select,table,tbody,th,td,tr,ol,caption,colgroup,col,option,button{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, form, fieldset, img {border:0 none;}
+h1, h2, h3, h4, h5, h6, button, textarea, select{font-size:1em;}
+ul,ol,li,dl,dt,dd{list-style:none;}
+label, input, button, select, img {vertical-align:middle}
+button {cursor:pointer}
+table{border-collapse:collapse;}
+p {word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;}
+address,em{font-style:normal}
+mark{font-weight:700;background:0 0}
+header, nav, section, footer, article, aside, details, figcaption, figure, menu{display:block;}
+
+.skip, legend,caption,label{width:1px;height:1px;overflow:hidden;font-size:0;line-height:0;visibility:hidden;position:absolute;left:-999px;}
+a:link, a:visited{text-decoration:none;color:#333;}
+a:hover, a:active{text-decoration:underline;color:#333;}
+
+#skipNavi{position:absolute;z-index:999;width:100%;}
+#skipNavi a{position:absolute;top:-100px;}
+#skipNavi a:hover,
+#skipNavi a:active,
+#skipNavi a:focus{position:absolute;top:0;display:block;width:100%;height:20px;padding:10px;background:#333;color:#fff;font-weight:bold;
+				  font-size:20px;text-align:center;}

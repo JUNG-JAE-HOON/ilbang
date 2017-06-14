@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script  type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+    // 절대로 수정하지 마세요!!
+    function getQueryVariable(variable) { 
+        var query = window.location.search.substring(1); 
+        var vars = query.split('&'); 
+        
+        for (var i=0;i<vars.length;i++) { 
+            var pair = vars[i].split('='); 
+
+            if (pair[0] == variable) { 
+                return pair[1]; 
+            } 
+        } 
+    }
+    
+    $(function() {
+        // 절대로 수정하지 마세요!!
+        // var zipcode = getQueryVariable('zipcodes');
+        var basic_address = decodeURI(getQueryVariable('basics'));
+        var detail_address = decodeURI(getQueryVariable('details'));
+        // var zipcodes = zipcode.split('-');
+        // var zipcode = zipcodes[0] + zipcodes[1];
+    
+        // 실제로 오픈할때는 이 부분을 삭제해주세요.
+        // alert("zipcode : " + zipcode + "\nbasic_address : " + basic_address + "\ndetail_address : " + detail_address);
+    
+        // 입력페이지에서 input name을 파악하여 수정해주세요
+        // $(opener.document).find("input[name=address1]").val(zipcode); // 우편번호 입력필드가 한 개일때
+        //$(opener.document).find("input[name=zipcode1]").val(zipcodes[0]); // 우편번호 입력필드가 분리되어 있을때
+        //$(opener.document).find("input[name=zipcode2]").val(zipcodes[1]); // 우편번호 입력필드가 분리되어 있을때
+        // $(opener.document).find("input[name=newzipcode]").val(newzipcode); // 새우편번호 입력필드 (2015년 8월 1일 변경 대비)  --> 에러남
+        $(opener.document).find("input[name=address1]").val(basic_address);   // 기본 주소 입력필드
+        $(opener.document).find("input[name=address2]").val(detail_address); // 상세 주소 입력필드
+        // $(opener.document).find("input[name=oldaddr]").val(oldaddr_address); // 지번 주소 입력필드       --> 에러남
+
+        if(basic_address == "") {
+            $(opener.document).find("input[name=address1]").attr("readonly", false);
+        } else {
+            $(opener.document).find("input[name=address1]").attr("readonly", true);
+        }
+
+        if(detail_address == "") {
+            $(opener.document).find("input[name=address2]").attr("readonly", false);
+            $(opener.document).find("input[name=address2]").attr("placeholder", "상세 주소를 입력해주세요.");
+        } else {
+            $(opener.document).find("input[name=address2]").attr("readonly", true);
+        }
+
+        if(opener.location.href == "http://il-bang.com/pc_renewal/gameng/gamengApply.php") {
+            window.opener.getCoordinates(basic_address);
+        }
+        
+        window.close();
+    });
+</script>
+</head> 
+<body>
+</body>
+</html>
